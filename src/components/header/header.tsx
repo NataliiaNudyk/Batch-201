@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Nav } from '../nav';
+import { Logo } from '../logo';
 
 export const Header = () => {
   const isActive = false;
@@ -10,13 +11,7 @@ export const Header = () => {
         flex items-center justify-between mb-6
         "
         >
-          <a href="#">
-            <img
-              src="src/img/logo.png"
-              alt="logo"
-              className="w-[90px] h-[90px]"
-            />
-          </a>
+          <Logo />
           <div className="flex items-center">
             <input
               type="text"

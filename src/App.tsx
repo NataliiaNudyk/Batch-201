@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { AgeGate } from "./pages/AgeGate";
 import { Header } from "./components/header";
-
+import { Footer } from "./components/footer";
 
 export default function App() {
   // const labels = [
@@ -26,15 +26,14 @@ export default function App() {
     if (saved === "true") setAgeConfirmed(true);
   }, []);
 
-  
-
   return (
-      <div>
-        {ageConfirmed === null && <AgeGate setAgeConfirmed={setAgeConfirmed} />}
-          <Header />
-        <main className="flex justify-center">
-          <Outlet />
-        </main>
-      </div>
+    <div className="min-h-screen flex flex-col">
+      {ageConfirmed === null && <AgeGate setAgeConfirmed={setAgeConfirmed} />}
+      <Header />
+      <main className="flex justify-center flex-1">
+        <Outlet />
+      </main>
+     <Footer />
+    </div>
   );
 }
