@@ -25,8 +25,11 @@
 :root {
 --primary: #460D0D;
 --primary-text: #481313;
+--primary-text-light: #AE2D2D;
 --secondary: #A78C4C;
---gray: #212529
+--secondary-blur: #a78c4c28;
+--gray: #212529;
+--blur-color: #A33B3BB8;
 }
 
 body {

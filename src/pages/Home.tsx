@@ -1,8 +1,83 @@
-
+import { Link } from "react-router-dom"
 
 const Home = () => {
- return (
-    <div>Home</div>
+  return (
+   <div>
+   <div className="flex flex-col justify-center items-center h-[540px] w-full bg-(--primary-text)">
+     <img src="src/img/logo.png" alt="logo" className="w-[360px] h-[360px]" />
+        <button className="
+     w-[438px] h-16 
+     rounded-full bg-(--secondary) 
+     cursor-pointer
+     "
+        ><Link to="/cataloge" className="text-(--primary-text) font-bold text-[40px]">Перейти до каталогу</Link></button>
+   </div>
+
+      <div>
+        <section className="pr-[42px] mt-16">
+          <h2 className="
+        mb-20
+        text-[64px] font-bold text-center
+        bg-linear-to-r from-(--primary-text) to-(--primary-text-light) bg-clip-text text-transparent
+        "
+          >Manifesto</h2>
+         
+          <div className="flex items-center gap-6">
+            <img src="src/img/manifestoPage/bottles.jpg" alt="bottle"
+              className="
+              h-[334px] w-[593px] rounded-e-3xl object-cover 
+              shadow-[20px_0_100px_#A33B3BB8]
+              "
+            />
+            <div className="w-24 h-0.5 bg-linear-to-r from-(--primary-text) to-(--primary-text-light) rounded-full"></div>
+            <div className="w-[666px] ">
+              <h3 className="mb-6 text-bold text-(--primary-text) text-[48px]">Ми не женемось за гучністю.</h3>
+              <p className="text-bold text-(--gray) text-[40px]">Ми цінуємо тишу моменту, коли відкривається вино — і характер, який залишається після.</p>
+            </div>
+        </div>
+        </section>
+        <section className="flex flex-col items-center gap-11 mt-[131px] mb-28 px-10">
+          <h1 className="
+          text-[80px] font-bold
+          bg-linear-to-r from-(--primary-text) to-(--primary-text-light) bg-clip-text text-transparent
+          "
+          >Batch #201 — це не маркетплейс</h1>
+          <div className="h-[193px] w-0.5 bg-linear-to-r from-(--primary-text) to-(--primary-text-light) rounded-full"></div>
+          <p className="
+              w-[660px] h-[120px]
+              text-bold text-(--primary-text) text-[64px] text-center
+              bg-[radial-gradient(ellipse_farthest-corner_at_center_center,#ece6d8_0%,#f0ebe0_20%,#f3efe6_40%,#F7F4EE_60%,#ffffff_80%)]
+              "
+              >
+              It’s a state of mind.</p>
+        </section>
+        <div className="
+        h-[589px] w-full
+        bg-[url(src/img/manifestoPage/wineBottle.png)] bg-no-repeat bg-contain
+        "
+        ></div>
+          <section className="flex flex-col mb-[134px] items-center px-10">
+            <h3 className="font-bold text-(--primary-text) text-[48px] leading-[82px] text-center">Тут не обирають наосліп — тут довіряють інтуїції, історії, смаку.</h3>
+            <div className="mb-10 h-[135px] w-0.5 bg-(--secondary) rounded-full"></div>
+            <h2 className="mb-[105px] font-bold text-(--primary-text) text-[64px]">Ми говоримо просто.</h2>
+          <h2 className="
+            font-bold text-(--primary-text) text-[64px] text-shadow-[4px_4px_3px_#00000020]
+            "
+          >Simple. Structured. With character.</h2>
+        </section>
+        <section className="flex gap-6 pl-10 mb-[114px]">
+          <p className="w-[553px] font-bold text-(--gray) text-[40px]">Кожна “партія” — як розділ таємного клубу, де естетика важить не менше, ніж аромат.</p>
+          <img src="src/img/manifestoPage/glasses.png" alt="wine glases"
+          className="w-[823px] h-[259px] rounded-s-3xl object-cover object-[50%_45%]"
+          />
+        </section>
+        <section className="mb-[295px] py-10 text-center">
+          <h2 className="font-bold text-(--primary-text) text-[64px]">Ми підтримуємо fine wine culture в Україні.</h2>
+          <h2 className="mt-[175px] mb-[110px] font-bold text-(--secondary) text-[64px]">Без компромісів, без пафосу, без росії й білорусі.</h2>
+          <h2 className="font-bold text-(--primary-text) text-[64px]">Just taste. And meaning.</h2>
+        </section>
+      </div>
+</div>
   )
 }
 

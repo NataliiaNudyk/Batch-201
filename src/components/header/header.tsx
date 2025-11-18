@@ -31,12 +31,12 @@ export const Header = () => {
             "
             >
               <button
-                className={`pr-[7px] border-r-2 ${isActive ? "text-(--secondary)" : "text-(--gray)"}`}
+                className={`pr-[7px] border-r-2 cursor-pointer ${isActive ? "text-(--secondary)" : "text-(--gray)"}`}
               >
                 UA
               </button>
               <button
-                className={`${isActive ? "text-(--secondary)" : "text-(--gray)"}`}
+                className={`cursor-pointer ${isActive ? "text-(--secondary)" : "text-(--gray)"}`}
               >
                 EN
               </button>
