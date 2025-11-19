@@ -43,13 +43,14 @@ const Home = () => {
           "
           >Batch #201 — це не маркетплейс</h1>
           <div className="h-[193px] w-0.5 bg-linear-to-r from-(--primary-text) to-(--primary-text-light) rounded-full"></div>
+          <div className="flex items-center justify-center relative top-[59px] mb-[122px] w-[600px] rounded-full shadow-[0px_0px_1000px_20px_#A78C4C]">
           <p className="
-              w-[660px] h-[120px]
-              text-bold text-(--primary-text) text-[64px] text-center
-              bg-[radial-gradient(ellipse_farthest-corner_at_center_center,#ece6d8_0%,#f0ebe0_20%,#f3efe6_40%,#F7F4EE_60%,#ffffff_80%)]
+               absolute 
+              text-bold text-(--primary-text) text-[64px] text-center text-shadow-[4px_4px_3px_#00000040]
               "
-              >
+          >
               It’s a state of mind.</p>
+            </div>
         </section>
         <div className="
         h-[589px] w-full
@@ -61,7 +62,7 @@ const Home = () => {
             <div className="mb-10 h-[135px] w-0.5 bg-(--secondary) rounded-full"></div>
             <h2 className="mb-[105px] font-bold text-(--primary-text) text-[64px]">Ми говоримо просто.</h2>
           <h2 className="
-            font-bold text-(--primary-text) text-[64px] text-shadow-[4px_4px_3px_#00000020]
+            font-bold text-(--primary-text) text-[64px] text-shadow-[4px_4px_3px_#00000040]
             "
           >Simple. Structured. With character.</h2>
         </section>

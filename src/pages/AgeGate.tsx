@@ -1,20 +1,31 @@
+import { useEffect } from "react";
+
 type Props = {
- setAgeConfirmed: React.Dispatch<React.SetStateAction<boolean | null>>;
+  setAgeConfirmed: React.Dispatch<React.SetStateAction<boolean | null>>;
+  ageConfirmed: null | boolean;
 }
 
-export const AgeGate: React.FC<Props> = ({ setAgeConfirmed }) => {
+export const AgeGate: React.FC<Props> = ({ setAgeConfirmed, ageConfirmed }) => {
   
   const handleYes = () => {
     sessionStorage.setItem('ageConfirmed', 'true');
     setAgeConfirmed(true);
   };
 
+    useEffect(() => {
+    document.body.style.overflow = !ageConfirmed ? 'hidden' : 'auto';
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [ageConfirmed]);
+
 
   return (
 
     <div className="
     flex justify-center items-center absolute overflow-hidden
-    w-screen h-screen
+    w-full h-screen z-100
   bg-[#400505B8] backdrop-blur-xs
   "
     >

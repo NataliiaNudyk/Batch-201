@@ -1,9 +1,33 @@
 import { Link } from 'react-router-dom'
 import { Nav } from '../nav';
 import { Logo } from '../logo';
+import { Search } from '../search';
+import { useEffect, useRef, useState } from 'react';
 
 export const Header = () => {
+  const [isOpen, setIsOpen] = useState<boolean>();
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
   const isActive = false;
+
+    useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
+
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(target) &&
+      buttonRef.current &&
+      !buttonRef.current.contains(target)
+    ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
   return (
        <header className="px-10 pt-[58px] mb-[26px]">
         <div
@@ -13,21 +37,11 @@ export const Header = () => {
         >
           <Logo />
           <div className="flex items-center">
-            <input
-              type="text"
-              className="
-            w-[469px] h-[54px] pl-[52px] pr-[42px] py-[13px] mr-[70px]
-            font-[Cuprum] text-2xl text-(--primary-text)
-            rounded-full border-2 border-(--primary-text)
-            bg-[url(src/img/icon/search.svg)] bg-no-repeat bg-position-[10px]
-            "
-              placeholder="Пошук"
-            />
+            <Search />
             <div
               className="
             flex items-center gap-[7px] mr-[93px]
             text-[32px] leading-8
-            
             "
             >
               <button
@@ -42,17 +56,38 @@ export const Header = () => {
               </button>
             </div>
             <div className="flex gap-8">
-              <Link to="#">
+              <Link to="/cart" >
                 <img
                   src="src/img/icon/cart.svg"
                   alt="cart"
                   className="w-10 h-10"
                 />
               </Link>
-              <Link to="#">
-                <img src="src/img/icon/profile.svg" alt="profile" />
-              </Link>
-              <Link to="#">
+              <div className="relative">
+              <button
+                ref={buttonRef}
+                className="cursor-pointer"
+                onClick={() => setIsOpen(!isOpen)} >
+                <img src={isOpen ? "src/img/icon/profile_active.svg" : "src/img/icon/profile.svg"} alt="profile" />
+              </button>
+              <div
+                ref={dropdownRef}
+                className={`
+                  flex flex-col items-center justify-between
+                absolute right-0 w-[178px] h-[137px] p-8 mt-2.5
+                bg-white rounded-3xl border border-(--primary-text)
+                transition-all duration-200 origin-top-right
+
+                ${isOpen ? "opacity-100 scale-100 " : "opacity-0 scale-95 pointer-events-none"}
+              `}
+              >
+                <Link to="/login"  className="font-bold  text-(--primary-text) text-[24px] leading-6 hover:text-(--secondary)">Вхід</Link>
+                <div className="w-full h-px bg-(--primary-text)"></div>
+                <Link to="/register" className="font-bold  text-(--primary-text) text-[24px] leading-6 hover:text-(--secondary)">Реєстрація</Link>
+                </div>
+              </div>
+            
+              <Link to="/favorite">
                 <img src="src/img/icon/fav.svg" alt="favorite" />
               </Link>
             </div>
