@@ -1,7 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { navLink } from "../../constants/navLink";
+import { useTranslation } from "react-i18next";
 
 export const Nav = () => {
+  const { t } = useTranslation("common");
   return (
     <nav>
       <ul
@@ -21,7 +23,7 @@ export const Nav = () => {
                 }`
               }
             >
-              {link.name}
+              {t(`navigation.${link.name}`)}
             </NavLink>
           </li>
         ))}

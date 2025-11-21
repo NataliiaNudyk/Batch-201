@@ -1,7 +1,9 @@
 import { useState } from "react"
+import { useTranslation } from "react-i18next";
 
 export const Search = () => {
   const [value, setValue] = useState<string>("");
+  const { t } = useTranslation("common");
   return (
    <div className="relative w-[469px] mr-[70px]">
               <input
@@ -13,9 +15,9 @@ export const Search = () => {
               font-[Cuprum] text-2xl text-(--primary-text)
               rounded-full border-2 border-(--primary-text)
               bg-[url(src/img/icon/search.svg)] bg-no-repeat bg-position-[10px]
-              [placeholder]:text-2xl
+              placeholder:text-2xl! placeholder:text-(--gray-light)!
               "
-                placeholder="Пошук"
+                placeholder={t("navigation.search")}
             />
             {value && (
         <button

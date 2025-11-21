@@ -1,0 +1,23 @@
+{
+  "navigation": {
+    "manifesto": "Маніфест",
+    "catalog": "Каталог",
+    "contacts": "Контакти",
+    "delivery": "Доставка",
+    "login": "Вхід",
+    "register": "Реєстрація",
+     "search" : "Пошук"
+  },
+   "language": {
+    "ua": "UA",
+    "en": "EN"
+  },
+  "footer": {
+    "FAQ": "FAQ",
+    "delivery":"Доставка",
+    "contacts":"Контакти",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "cookies": "Cookies"
+  }
+}

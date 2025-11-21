@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "title": "Batch #201"
+  },
+  "buttons": {
+    "goToCatalog": "Перейти до каталогу"
+  },
+  "manifestoSection": {
+    "title": "Manifesto",
+    "subtitle": "Ми не женемось за гучністю.",
+    "text": "Ми цінуємо тишу моменту, коли відкривається вино — і характер, який залишається після."
+  },
+
+  "notMarketplace": {
+    "title": "Batch #201 — це не маркетплейс",
+    "subtitle": "It’s a state of mind."
+  },
+  "weSpeakEasy": {
+    "title": "Ми говоримо просто.",
+    "subtitle": "Тут не обирають наосліп — тут довіряють інтуїції, історії, смаку.",
+    "text": "Simple. Structured. With character."
+  },
+  "everyBatch": {
+    "text": "Кожна “партія” — як розділ таємного клубу, де естетика важить не менше, ніж аромат."
+  },
+  "fineWineCulture": {
+    "title": "Ми підтримуємо fine wine culture в Україні.",
+    "subtitle": "Без компромісів, без пафосу, без росії й білорусі.",
+    "text": "Just taste. And meaning."
+  }
+}
+
+

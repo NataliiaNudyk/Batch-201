@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "title": "Batch #201"
+  },
+  "buttons": {
+    "goToCatalog": "Go to catalog"
+  },
+  "manifestoSection": {
+    "title": "Manifesto",
+    "subtitle": "We don’t chase loudness.",
+    "text": "We value the quiet moment when the bottle opens — and the character that stays after."
+  },
+
+  "notMarketplace": {
+    "title": "Batch #201 is not a marketplace",
+    "subtitle": "It’s a state of mind."
+  },
+
+  "weSpeakEasy": {
+    "title": "We speak simply.",
+    "subtitle": "Here, you don’t choose blindly — you trust intuition, story, taste.",
+    "text": "Simple. Structured. With character."
+  },
+
+  "everyBatch": {
+    "text": "Every “batch” is like a chapter of a secret club, where aesthetics matter just as much as aroma."
+  },
+
+  "fineWineCulture": {
+    "title": "We support the fine wine culture in Ukraine.",
+    "subtitle": "No compromises, no pretentiousness, no russia or belarus.",
+    "text": "Just taste. And meaning."
+  }
+}

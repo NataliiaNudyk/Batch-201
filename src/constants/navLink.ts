@@ -1,21 +1,21 @@
 export const navLink = [
-  { path: '/', name: 'Маніфест' },
-  { path: '/catalog', name: 'Каталог' },
-  { path: '/contacts', name: 'Контакти' },
-  { path: '/delivery', name: 'Доставка' },
+  { path: '/', name: 'manifesto' },
+  { path: '/catalog', name: 'catalog' },
+  { path: '/contacts', name: 'contacts' },
+  { path: '/delivery', name: 'delivery' },
 ];
   
 
 export const navLinkFooterMain = [
   { path: '/', name: 'FAQ' },
-  { path: '/delivery', name: 'Доставка' },
-  { path: '/contacts', name: 'Контакти' },
+  { path: '/delivery', name: 'delivery' },
+  { path: '/contacts', name: 'contacts' },
 ];
 
 export const navLinkFooter = [
-  { path: '/', name: 'Terms' },
-  { path: '/', name: 'Privacy' },
-  { path: '/', name: 'Cookies' },
+  { path: '/', name: 'terms' },
+  { path: '/', name: 'privacy' },
+  { path: '/', name: 'cookies' },
 ];
 
 export const navLinkSocialMedia = [

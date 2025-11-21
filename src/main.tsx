@@ -9,6 +9,8 @@ import Favorites from './pages/Favorites.tsx'
 import Cart from './pages/Cart.tsx'
 import PageNotFound from './pages/PageNotFound.tsx'
 import Register from './pages/Register.tsx'
+import ProductPage from './pages/ProductPage.tsx'
+import "./i18n";
 
 const token = true;
 
@@ -21,6 +23,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/profile"  element={token ? <Profile /> : <Navigate to="/login" />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/catalog" element={<ProductPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Route>
         <Route path="/login" element={<Login />} />

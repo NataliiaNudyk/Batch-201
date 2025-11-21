@@ -1,0 +1,24 @@
+{
+  "navigation": {
+    "manifesto": "Manifesto",
+    "catalog": "Catalog",
+    "contacts": "Contacts",
+    "delivery": "Delivery",
+    "login": "Login",
+    "register": "Registration",
+    "search" : "Search"
+  },
+
+  "language": {
+    "ua": "UA",
+    "en": "EN"
+  },
+  "footer": {
+    "FAQ": "FAQ",
+    "delivery": "Delivery",
+    "contacts": "Contacts",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "cookies": "Cookies"
+  }
+}

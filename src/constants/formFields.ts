@@ -1,9 +1,11 @@
-export const formFields = [
+import type { FieldType } from "../types/fieldType";
+
+export const formFields: FieldType [] = [
   {
     label: "Введіть своє повне ім’я",
     type: "text",
     placeholder: "Ірина Петрищук",
-    name: "fullName",
+    name: "fullname",
   },
   {
     label: "Введіть свою дату народження",
@@ -20,7 +22,5 @@ export const formFields = [
     label: "Введіть свій пароль",
     type: "password",
     name: "password",
-    image: "src/img/icon/registration/eye-off.png",
-    imageActive: "src/img/icon/registration/eye.png",
   }
 ];

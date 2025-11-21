@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { Logo } from "../logo";
 import { navLinkFooter, navLinkFooterMain, navLinkSocialMedia } from "../../constants/navLink";
+import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
+  const { t } = useTranslation("common");
+
   return (
     <footer className="flex items-center justify-between p-10  h-[170px] bg-(--primary-text)">
       <Logo />
@@ -11,7 +14,7 @@ export const Footer = () => {
           <div className="flex items-center gap-[42px] text-4xl text-(--secondary)">
             {navLinkFooterMain.map((link) => (
               <Link to={link.path} key={link.name}>
-                {link.name}
+                {t(`footer.${link.name}`)}
               </Link>
             ))}
           </div>
@@ -19,7 +22,7 @@ export const Footer = () => {
             <p>© 2025 BATCH#201</p>
             {navLinkFooter.map((link) => (
               <Link to={link.path} key={link.name}>
-                {link.name}
+                {t(`footer.${link.name}`)}
               </Link>
             ))}
           </div>

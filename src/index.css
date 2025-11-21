@@ -32,6 +32,8 @@
 --gray-medium: #ADB5BD;
 --gray-light: #E4E8EB;
 --blur-color: #A33B3BB8;
+--error: #AA1329;
+--error-bg: #FDF3F4;
 }
 
 body {
@@ -55,4 +57,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 input[type="date"] {
   appearance: none;
   -webkit-appearance: none;
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear,
+input[type="password"]::-webkit-textfield-decoration-container {
+  display: none;
 }
