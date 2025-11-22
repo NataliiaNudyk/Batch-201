@@ -20,5 +20,14 @@
     "terms": "Terms",
     "privacy": "Privacy",
     "cookies": "Cookies"
-  }
+  },
+  "modal": {
+  "ageGateTitle": "Are you already 18? – then join the batch",
+  "ageGateYes": "Yes",
+  "ageGateNo": "No",
+  "registerTitle": "Wait! You haven’t finished your registration yet. ",
+  "registerQuestion":"Would you like to continue now or come back later?",
+  "registerYes": "Continue",
+  "registerNo": "Exit"
+}
 }

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import type { FieldType } from "../../types/fieldType";
 import { InputField } from "./inputField";
 import { PasswordField } from "./passwordField";
@@ -16,6 +17,8 @@ export const FormFieldRenderer: React.FC<Props> = ({
   onChange,
   error
 }) => {
+  const { t } = useTranslation("auth");
+
   switch (field.type) {
     case "password":
       return (
@@ -29,7 +32,7 @@ export const FormFieldRenderer: React.FC<Props> = ({
     default:
       return (
         <InputField
-          placeholder={field.placeholder}
+          placeholder={t(`register.placeholder${field.name}`)}
           inputType={field.type}
           value={value}
           onChange={onChange}

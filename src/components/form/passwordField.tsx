@@ -12,7 +12,7 @@ export const PasswordField: React.FC<Props> = ({value, onChange, error }) => {
   const [show, setShow] = useState<boolean>(false);
   
   return (
-    <div className="relative w-full">
+    <div className="relative w-full flex flex-col gap-[7px]">
       <InputField
         inputType={show ? "text" : "password"}
         value={value}

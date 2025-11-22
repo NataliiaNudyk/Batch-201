@@ -1,61 +1,83 @@
 import { formFields } from "../constants/formFields";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { FormDataType } from "../types/formDataType";
 import { FormFieldRenderer } from "../components/form/formFieldRenderer";
-
-
-
+import { useTranslation } from "react-i18next";
+import { Modal } from "../components/modal";
 
 const Register = () => {
+  const { t } = useTranslation("auth");
+const [isModalOpen, setIsModalOpen] = useState<boolean>(false); 
   const [formData, setFormData] = useState<FormDataType>({
-  fullname: "",
-  birthdate: "",
-  email: "",
-  password: "",
+    fullname: "",
+    birthdate: "",
+    email: "",
+    password: "",
   });
-  
 
   const [errors, setErrors] = useState({
     fullname: "",
     birthdate: "",
     email: "",
-    password: ""
+    password: "",
   });
- 
+
   const handleChange = (name: string, value: string) => {
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
 
     if (value.trim() === "") {
-      setErrors(prev => ({ ...prev, [name]: "Поле не може бути пустим" }));
+      setErrors((prev) => ({ ...prev, [name]: t("register.error") }));
     } else {
-      setErrors(prev => ({ ...prev, [name]: "" }));
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
-  };  
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const res = await fetch("/api/register", {
       method: "POST",
-      body: JSON.stringify(formData)
+      body: JSON.stringify(formData),
     });
 
     const data = await res.json();
 
     if (!res.ok) {
-      setErrors(prev => ({ ...prev, ...data.errors }));
+      setErrors((prev) => ({ ...prev, ...data.errors }));
       return;
     }
 
     alert("Успішна реєстрація!");
   };
-  
-  
-  const isFormValid = Object.values(errors).every(err => err === "") &&
-                      Object.values(formData).every(v => v !== "");
+
+  const isFormValid =
+    Object.values(errors).every((err) => err === "") &&
+    Object.values(formData).every((v) => v !== "");
+ 
+  useEffect(() => {
+    const handleBeforeUnload = (event: BeforeUnloadEvent) => {
+      event.preventDefault();
+    };
+
+    const handlePopState = () => {
+      setIsModalOpen(true);
+      window.history.pushState(null, "");
+    };
+
+    window.history.pushState(null, "");
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
+
 
   return (
-    <div className="flex h-screen ">
+    <div className="flex h-screen relative">
+      {isModalOpen && <Modal registerModal setIsModalOpen={setIsModalOpen} />}
       <div className="w-[48%] min-h-[950px] bg-[url(src/img/registration.png)] bg-no-repeat bg-cover ">
         <img
           src="src/img/logo.png"
@@ -77,34 +99,36 @@ const Register = () => {
           bg-linear-to-r from-(--primary-text) to-(--primary-text-light) bg-clip-text text-transparent
           "
           >
-            Вступи до клубу,{" "}
+            {t("register.joinToTheClub")}{" "}
           </span>
-          щоб зберігати улюблені партії та відкривати нові вина
+          {t("register.title")}
         </p>
 
-        <form onSubmit={handleSubmit} className="flex flex-col items-center xl:w-[560px] lg:w-[500px] h-full" >
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col items-center xl:w-[560px] lg:w-[500px] h-full"
+        >
           <div className="flex flex-col gap-8 w-full ">
-            {formFields.map(field => (
-          <label
-            key={field.name}
-            className={`${errors[field.name] ? "text-(--error)" : "text-(--primary-text)"} 
+            {formFields.map((field) => (
+              <label
+                key={field.name}
+                className={`${errors[field.name] ? "text-(--error)" : "text-(--primary-text)"} 
                         flex flex-col gap-[7px] font-bold text-[18px]`}
-          >
-            {field.label}
+              >
+                {t(`register.${field.name}`)}
 
-            <FormFieldRenderer
-              field={field}
-              value={formData[field.name]}
-              onChange={(val) => handleChange(field.name, val)}
-              error={errors[field.name]}
-            />
-          </label>
-        ))}
+                <FormFieldRenderer
+                  field={field}
+                  value={formData[field.name]}
+                  onChange={(val) => handleChange(field.name, val)}
+                  error={errors[field.name]}
+                />
+              </label>
+            ))}
           </div>
-          { !errors.password && (
-            <p className="w-full mt-2 font-bold text-(--gray) text-[14px] leading-4 ">
-            *Пароль має містити щонайменше 8 символів, велику й малу літеру,
-            цифру та спеціальний символ.
+          {!errors.password && (
+            <p className="w-full mt-[7px] font-bold text-(--gray) text-[14px] leading-4 ">
+              {t("register.text")}
             </p>
           )}
 
@@ -116,7 +140,7 @@ const Register = () => {
             ${isFormValid ? "bg-(--secondary)  text-(--primary)" : "bg-(--gray-light)  text-(--gray-medium)"}
             `}
           >
-            Зараєструватись
+            {t("register.submit")}
           </button>
         </form>
       </div>

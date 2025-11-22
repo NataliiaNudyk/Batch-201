@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { AgeGate } from "./pages/AgeGate";
+import { Modal } from "./components/modal/modal";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
 
@@ -24,16 +24,21 @@ export default function App() {
   useEffect(() => {
     const saved = sessionStorage.getItem("ageConfirmed");
     if (saved === "true") setAgeConfirmed(true);
-  }, []); 
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col">
-      {ageConfirmed === null && <AgeGate setAgeConfirmed={setAgeConfirmed} ageConfirmed={ageConfirmed} />}
+      {ageConfirmed === null && (
+        <Modal
+          setAgeConfirmed={setAgeConfirmed}
+          ageConfirmed={ageConfirmed}
+        />
+      )}
       <Header />
       <main className="flex justify-center flex-1">
         <Outlet />
       </main>
-     <Footer />
+      <Footer />
     </div>
   );
 }

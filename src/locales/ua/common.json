@@ -19,5 +19,14 @@
     "terms": "Terms",
     "privacy": "Privacy",
     "cookies": "Cookies"
+  },
+  "modal": {
+    "ageGateTitle": "Тобі вже виповнилось 18? - тоді заходь у партію",
+    "ageGateYes": "Так",
+    "ageGateNo": "Ні",
+    "registerTitle": "Почекайте! Ви ще не завершили реєстрацію.",
+     "registerQuestion":"Бажаєте продовжити зараз чи повернутися пізніше?",
+    "registerYes": "Продовжити",
+    "registerNo": "Вийти"
   }
 }
