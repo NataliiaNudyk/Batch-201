@@ -7,7 +7,7 @@ import { Modal } from "../components/modal";
 
 const Register = () => {
   const { t } = useTranslation("auth");
-const [isModalOpen, setIsModalOpen] = useState<boolean>(false); 
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormDataType>({
     fullname: "",
     birthdate: "",
@@ -53,7 +53,7 @@ const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const isFormValid =
     Object.values(errors).every((err) => err === "") &&
     Object.values(formData).every((v) => v !== "");
- 
+
   useEffect(() => {
     const handleBeforeUnload = (event: BeforeUnloadEvent) => {
       event.preventDefault();
@@ -74,10 +74,11 @@ const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     };
   }, []);
 
-
   return (
     <div className="flex h-screen relative">
-      {isModalOpen && <Modal registerModal setIsModalOpen={setIsModalOpen} />}
+      {isModalOpen && (
+        <Modal registerModal setIsModalOpen={setIsModalOpen} />
+      )}
       <div className="w-[48%] min-h-[950px] bg-[url(src/img/registration.png)] bg-no-repeat bg-cover ">
         <img
           src="src/img/logo.png"
@@ -137,7 +138,8 @@ const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
             className={`
             w-full h-16 mt-[75px]
             rounded-full p-2.5 font-bold text-[32px] cursor-pointer
-            ${isFormValid ? "bg-(--secondary)  text-(--primary)" : "bg-(--gray-light)  text-(--gray-medium)"}
+            ${isFormValid ? "bg-(--secondary)  text-(--primary) hover:bg-(--secondary-hover)" : "bg-(--gray-light)  text-(--gray-medium)"}
+            
             `}
           >
             {t("register.submit")}

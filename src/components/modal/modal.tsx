@@ -41,18 +41,20 @@ export const Modal: React.FC<Props> = ({
 
 
   useEffect(() => {
-    document.body.style.overflow = !ageConfirmed ? "hidden" : "auto";
+  const hide = registerModal || !ageConfirmed; 
+  document.body.style.overflow = hide ? "hidden" : "auto";
 
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [ageConfirmed]);
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [registerModal, ageConfirmed]);
+
 
   return (
     <div
       className="
     flex justify-center items-center absolute overflow-hidden
-    w-full h-screen z-100
+    w-full h-screen z-999
   bg-[#400505B8] backdrop-blur-xs
   "
     >

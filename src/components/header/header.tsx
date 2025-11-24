@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Nav } from "../nav";
 import { Logo } from "../logo";
 import { Search } from "../search";
@@ -66,13 +66,13 @@ export const Header = () => {
             </button>
           </div>
           <div className="flex gap-8">
-            <Link to="/cart">
+            <NavLink to="/cart">
               <img
                 src="src/img/icon/cart.svg"
                 alt="cart"
                 className="w-10 h-10"
               />
-            </Link>
+            </NavLink>
             <div className="relative">
               <button
                 ref={buttonRef}
@@ -82,7 +82,7 @@ export const Header = () => {
                 <img
                   src={
                     isOpen
-                      ? "src/img/icon/profile_active.svg"
+                      ? "src/img/icon/profile-active.svg"
                       : "src/img/icon/profile.svg"
                   }
                   alt="profile"
@@ -99,12 +99,12 @@ export const Header = () => {
                 ${isOpen ? "opacity-100 scale-100 " : "opacity-0 scale-95 pointer-events-none"}
               `}
               >
-                <Link
+                <NavLink
                   to="/login"
                   className="font-bold  text-(--primary-text) text-[24px] leading-6 hover:text-(--secondary)"
                 >
                   {t("navigation.login")}
-                </Link>
+                </NavLink>
                 <div className="w-full h-px bg-(--primary-text)"></div>
                 <Link
                   to="/register"

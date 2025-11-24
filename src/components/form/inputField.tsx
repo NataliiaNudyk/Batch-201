@@ -25,7 +25,7 @@ export const InputField: React.FC<Props> = ({
                 rounded-full border
                 font-bold text-[24px] 
                 placeholder:text-2xl! placeholder:text-(--gray-medium)!
-                ${error ? "border border-(--error) text-(--error) bg-(--error-bg)" : "border border-(--gray) text-(--gray) bg-white"}
+                ${error ? "border border-(--error) text-(--error) focus:outline-none focus:bg-(--error-bg)" : "border border-(--gray) text-(--gray) bg-white "}
               `}
       />
       {error && (
